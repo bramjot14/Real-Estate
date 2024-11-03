@@ -1,0 +1,73 @@
+/* Navbar Container */
+.custom-navbar {
+  background-color: #2c3e50; /* Darker background for elegance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 0.8rem 1.5rem; /* Add padding for breathing space */
+}
+
+/* Brand Styling */
+/* Brand Styling */
+.navbar-brand-custom {
+  color: #ffffff !important; /* White color with !important to override */
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.05rem;
+}
+
+.navbar-brand-custom:hover {
+  color: #f39c12; /* Highlight color on hover */
+}
+
+
+/* Centered Nav Links */
+.custom-nav-links .nav-link {
+  color: #bdc3c7;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.custom-nav-links .nav-link:hover {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+/* Right-Aligned Auth Links */
+.custom-nav-auth .nav-link {
+  color: #bdc3c7;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.custom-nav-auth .nav-link:hover {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+/* Mobile View Adjustments */
+.navbar-toggler {
+  border: none; /* Remove the default border if needed */
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+  background-color: transparent; /* Ensure the background is clear */
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") no-repeat center;
+  background-color: white; /* Color of the icon */
+}
+
+
+
+/* Adjust for Vertically Centered Links */
+.custom-nav-links,
+.custom-nav-auth {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,417 @@
+/* Hero Section Styling */
+.hero-section {
+    background-image: url('/public/interior2.jpg'); /* Use your background image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity for readability */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-name {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title {
+    font-size: 2rem;
+    margin-top: 10px;
+    font-weight: 300;
+    color: #f1f1f1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.hero-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+
+/* Profile Photo Styling */
+.profile-photo {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+    overflow: hidden;
+}
+
+.profile-photo img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+/* Contact Form Panel Styling */
+.contact-form-panel {
+    position: absolute;
+    top: 20%;
+    right: 30px;
+    width: 300px;
+    background-color: white;
+    border-left: 3px solid #007bff;
+    padding: 20px;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+}
+
+.contact-form-panel h5 {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.contact-form-panel .form-control {
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* Section Wrapper - General Styling */
+.section-wrapper {
+    padding: 100px 0; /* Increased padding for more height */
+    background-color: #f8f9fa;
+}
+
+/* Buying and Selling Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 30px; /* Increased padding for a bolder title area */
+    margin: 0;
+    position: relative;
+}
+
+/* Downward Arrow Below Title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 12px; /* Adjusted for visibility */
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+/* Section Content Styling */
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px; /* Increased padding inside the content for more space */
+}
+
+.section-content h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.start-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 30px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Image Styling */
+.section-image {
+    width: 50%;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .section-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .section-image {
+        width: 80%;
+        margin-top: 20px;
+    }
+}
+
+/* Testimonials Section Styling */
+.testimonials-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    position: relative;
+}
+
+.testimonials-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.testimonials-title::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+.testimonials-carousel {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
+}
+
+.testimonial-card {
+    flex: 1;
+    max-width: 30%;
+    min-width: 300px;
+    margin: 0 10px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+}
+
+.testimonial-feedback {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #333;
+}
+
+.testimonial-role {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Fade-in and fade-out effects */
+.fade-in {
+    opacity: 1;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    opacity: 0;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-control {
+    background: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .testimonials-carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-card {
+        max-width: 90%;
+        margin: 10px 0;
+    }
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background-image: url('/public/interior2.jpg'); /* Adjust path as necessary */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  
+  .contact-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .contact-user-icon {
+    font-size: 5rem; /* Size of user icon */
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .contact-phone {
+    font-size: 3.5rem; /* Increased font size */
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .contact-name {
+    font-size: 2rem; /* Increased font size */
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .contact-details {
+    font-size: 1.2rem; /* Increased font size */
+    margin-bottom: 30px;
+  }
+  
+  .social-icons {
+    margin: 20px 0;
+  }
+  
+  .social-icons > * {
+    font-size: 1.8rem; /* Size for social media icons */
+    margin: 0 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .social-icons > *:hover {
+    color: #ccc; /* Hover color for social icons */
+  }
+  
+  .contact-button {
+    background-color: #000 !important; /* Black background */
+    color: #fff !important; /* White text */
+    font-weight: bold !important; /* Bold text */
+    font-size: 1rem !important;
+    padding: 10px 20px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+    cursor: pointer;
+    transition: transform 0.2s ease !important;
+}
+
+.contact-button:hover {
+    transform: scale(1.05) !important; /* Slight zoom on hover */
+}
+
+
+  
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay for readability */
+    z-index: 1;
+  }
+  
+  
+
+
+@media (max-width: 768px) {
+    .section-wrapper {
+        padding: 80px 0;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-content {
+        padding: 30px;
+    }
+}
+
+
