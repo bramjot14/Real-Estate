@@ -17,7 +17,7 @@ const app = express(); // Initialize the app here
 app.set('view engine', 'ejs');
 
 // Serve static files (optional, in case you need this)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Set up multer for file storage (moved above the usage)
 const storage = multer.diskStorage({
@@ -47,9 +47,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(cors({
-  origin: 'http://localhost:3000',  // Ensure the correct frontend URL
-  credentials: true  // Allow credentials (cookies)
+  origin: 'https://real-estate-frontend-npqr.onrender.com',  // Update to your deployed front-end URL
+  credentials: true
 }));
+
 
 // Parse incoming request bodies (for JSON data)
 app.use(express.json()); // This middleware parses incoming requests with JSON payloads
@@ -79,9 +80,10 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+
 // Routes
 app.get('/', (req, res) => {
-  res.send('Backend server is running, but this server only handles authentication. Visit the React app on http://localhost:3000.');
+  res.send('Backend server is running, but this server only handles authentication. Visit the React app on https://real-estate-frontend-npqr.onrender.com.');
 });
 
 // Google OAuth login route
@@ -89,9 +91,8 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 
 // Google OAuth callback route
 app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
-  res.redirect('http://localhost:3000/profile');
+  res.redirect('https://real-estate-frontend-npqr.onrender.com/profile');  // Redirect to your deployed front-end URL
 });
-
 // Profile route
 app.get('/profile', (req, res) => {
   if (!req.isAuthenticated()) {
@@ -119,7 +120,7 @@ app.get('/logout', (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect('http://localhost:3000/');  // Redirect to the frontend after logout
+    res.redirect('https://real-estate-frontend-npqr.onrender.com/');  // Redirect to your deployed front-end URL
   });
 });
 
@@ -220,8 +221,13 @@ app.delete('/api/properties/:id', async (req, res) => {
   }
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 // Start the server
 const PORT = 5002;
+
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
