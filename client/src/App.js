@@ -25,7 +25,7 @@ function App() {
   const [user, setUser] = useState(null);  // State for user
   const [savedProperties, setSavedProperties] = useState([]);  // State for saved properties
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5002';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://real-estate-pyvy.onrender.com';
 
   useEffect(() => {
     axios.get(`${API_URL}/api/current_user`, { withCredentials: true })
