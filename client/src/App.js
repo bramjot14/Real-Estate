@@ -25,9 +25,10 @@ function App() {
   const [user, setUser] = useState(null);  // State for user
   const [savedProperties, setSavedProperties] = useState([]);  // State for saved properties
 
-  // Fetch the currently logged-in user
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5002';
+
   useEffect(() => {
-    axios.get('http://localhost:5002/api/current_user', { withCredentials: true })
+    axios.get(`${API_URL}/api/current_user`, { withCredentials: true })
       .then(response => {
         console.log('User received in frontend:', response.data.user);
         setUser(response.data.user);
@@ -36,6 +37,7 @@ function App() {
         console.error('Error fetching user:', err);
       });
   }, []);
+  
   
   // Function to save properties
   const handleSaveProperty = (property) => {
