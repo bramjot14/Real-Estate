@@ -9,7 +9,7 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`http://localhost:5002/api/blogs/${id}`);
+        const response = await axios.get(`https://real-estate-pyvy.onrender.com/api/blogs/${id}`);
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching blog details:', error);
