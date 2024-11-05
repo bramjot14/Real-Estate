@@ -1,13 +1,15 @@
 {
   "name": "real-estate-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A real estate website with authentication, property listings, and a mortgage calculator.",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "build": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["real-estate", "website", "nodejs", "react"],
+  "author": "Dilpreet Singh",
   "license": "ISC",
   "dependencies": {
     "@react-google-maps/api": "^2.20.3",
@@ -20,7 +22,6 @@
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
-    "git-filter-repo": "^0.0.30",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "morgan": "^1.10.0",
@@ -31,5 +32,8 @@
     "pg-promise": "^11.10.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.27.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
