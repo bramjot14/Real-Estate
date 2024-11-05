@@ -28,7 +28,7 @@ const Blogs = () => {
               <div className="blog-card d-flex align-items-center">
                 <div className="blog-image-wrapper">
                   <img
-                    src={`http://localhost:5002${blog.image_url}`} // Use the correct base URL
+                    src={`https://real-estate-pyvy.onrender.com${blog.image_url}`} // Updated base URL
                     alt={blog.title}
                     className="blog-image"
                   />
