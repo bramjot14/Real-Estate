@@ -30,7 +30,7 @@ const NavigationBar = ({ user, setUser }) => {
             {user ? (
               <>
                 <Nav.Link as={Link} to="/profile" className="nav-link-custom">Profile</Nav.Link>
-                {//user.role === 'admin' && 
+                {user.role === 'admin' && 
                   (
                   <>
                     {/* <Nav.Link as={Link} to="/admin/reviews" className="nav-link-custom">Manage Reviews</Nav.Link> */}
