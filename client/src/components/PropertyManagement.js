@@ -15,7 +15,7 @@ const PropertyManagement = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/api/properties');
+        const response = await axios.get('https://real-estate-pyvy.onrender.com/api/properties');
         setProperties(response.data);
       } catch (error) {
         console.error('Error fetching properties:', error);
@@ -36,7 +36,7 @@ const PropertyManagement = () => {
     }
 
     try {
-      await axios.post('http://localhost:5002/api/properties', formData, {
+      await axios.post('https://real-estate-pyvy.onrender.com/api/properties', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setSuccessMessage('Property submitted successfully');
@@ -53,7 +53,7 @@ const PropertyManagement = () => {
 
   const handleDelete = async (propertyId) => {
     try {
-      await axios.delete(`http://localhost:5002/api/properties/${propertyId}`);
+      await axios.delete(`https://real-estate-pyvy.onrender.com/api/properties/${propertyId}`);
       setSuccessMessage('Property deleted successfully!');
       setProperties(properties.filter((property) => property.id !== propertyId));
     } catch (error) {
@@ -135,7 +135,7 @@ const PropertyManagement = () => {
               <td>
                 {property.image_url ? (
                   <img
-                    src={`http://localhost:5002${property.image_url}`}
+                    src={`https://real-estate-pyvy.onrender.com${property.image_url}`}
                     alt={property.title}
                     style={{ width: '100px', height: 'auto' }}
                   />
