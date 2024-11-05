@@ -99,7 +99,7 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 
 // Google OAuth callback route
 app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
-  res.redirect('https://real-estate-frontend-npqr.onrender.com/profile'); // Your front-end URL
+  res.redirect('https://real-estate-frontend-npqr.onrender.com'); // ('https://real-estate-frontend-npqr.onrender.com/profile')
 });
 
 // Profile route
