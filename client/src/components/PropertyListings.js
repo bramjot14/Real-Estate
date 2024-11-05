@@ -33,7 +33,7 @@ const PropertyListings = () => {
                 {/* Display the image on the right */}
                 {property.image_url && (
                   <img
-                    src={`http://localhost:5002${property.image_url}`}  // Ensure correct path
+                    src={`https://real-estate-pyvy.onrender.com${property.image_url}`}  // Ensure correct path
                     alt={property.title}
                     style={{ width: '150px', height: 'auto' }}
                     className="ms-3"
