@@ -7,7 +7,7 @@ const PropertyListings = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/api/properties');
+        const response = await axios.get('https://real-estate-pyvy.onrender.com/api/properties');
         setProperties(response.data);
       } catch (error) {
         console.error('Error fetching properties:', error);
