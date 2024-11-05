@@ -38,11 +38,11 @@ const NavigationBar = ({ user, setUser }) => {
                   </>
                 )}
 
-                <Nav.Link href="http://localhost:5002/logout" className='nav-link-custom'>Logout</Nav.Link>
+                <Nav.Link href="https://real-estate-pyvy.onrender.com/logout" className='nav-link-custom'>Logout</Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="http://localhost:5002/auth/google" className="nav-link-custom">Login with Google</Nav.Link>
+                <Nav.Link href="https://real-estate-pyvy.onrender.com/auth/google" className="nav-link-custom">Login with Google</Nav.Link>
                 <Nav.Link href="/signup" className="nav-link-custom">Sign Up</Nav.Link>
               </>
             )}
