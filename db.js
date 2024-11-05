@@ -6,6 +6,10 @@ const pool = new Pool({
   database: 'real_estate_app',
   password: 'sE0uq4H9kHCd1Q3zE6injaNrd1CdCzaU',
   port: 5432,
+  ssl: {
+    rejectUnauthorized: false, // For development; change this as needed for production
+  },
 });
+
 
 module.exports = pool;
