@@ -36,7 +36,7 @@ const BlogManagement = () => {
     }
 
     try {
-      await axios.post('http://localhost:5002/api/blogs', formData, {
+      await axios.post('https://real-estate-pyvy.onrender.com/api/blogs', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setSuccessMessage('Blog submitted successfully');
@@ -53,7 +53,7 @@ const BlogManagement = () => {
 
   const handleDelete = async (blogId) => {
     try {
-      await axios.delete(`http://localhost:5002/api/blogs/${blogId}`);
+      await axios.delete(`https://real-estate-pyvy.onrender.com/api/blogs/${blogId}`);
       setSuccessMessage('Blog deleted successfully!');
       setBlogs(blogs.filter((blog) => blog.id !== blogId)); // Remove deleted blog from list
     } catch (error) {
@@ -135,7 +135,7 @@ const BlogManagement = () => {
               <td>
                 {blog.image_url ? (
                   <img
-                    src={`http://localhost:5002${blog.image_url}`}
+                    src={`https://real-estate-pyvy.onrender.com${blog.image_url}`}
                     alt={blog.title}
                     style={{ width: '100px', height: 'auto' }}
                   />
