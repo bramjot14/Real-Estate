@@ -34,7 +34,7 @@ const BlogDetails = () => {
       {blog.image_url ? (
         <div className="text-center mb-4">
           <img
-            src={`http://localhost:5002${blog.image_url}`}
+            src={`https://real-estate-pyvy.onrender.com${blog.image_url}`}
             alt={blog.title}
             style={{ width: '100%', maxHeight: '500px', objectFit: 'contain' }} // Larger image size
           />
