@@ -23,6 +23,7 @@ const NavigationBar = ({ user, setUser }) => {
             <Nav.Link as={Link} to="/schedule">Schedule Appointment</Nav.Link>
             <Nav.Link as={Link} to="/about">About Us/Our Team</Nav.Link>
             <Nav.Link as={Link} to="/property-listings">Property Listings</Nav.Link>
+            <Nav.Link as={Link} to="/admin/dashboard" className="nav-link-custom">Admin Dashboard</Nav.Link>
           </Nav>
 
           {/* Right-aligned user-related links */}
