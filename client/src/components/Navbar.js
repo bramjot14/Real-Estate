@@ -8,7 +8,7 @@ import { faGoogle, faFacebook, faApple, faTwitter, faEnvelope } from '@fortaweso
 const NavigationBar = ({ user, setUser }) => {
       const [showModal, setShowModal] = useState(false);
 
-    const handleLoginClick = () => {
+    const handleLoginClick = () => { 
         setShowModal(true);
     };
 
