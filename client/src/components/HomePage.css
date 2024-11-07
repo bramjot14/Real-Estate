@@ -1,15 +1,32 @@
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('/public/interior2.jpg'); /* Use your background image path */
+    background-image: url('/public/interior2.jpg'); /* Ensure your path is correct */
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     color: #fff;
     text-align: center;
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+}
+
+/* Section Wrapper - General Styling */
+.section-wrapper {
+    padding-top: 0; /* Remove top padding */
+    margin-top: -5px; /* Negative margin to eliminate extra space */
+    background-color: #f8f9fa;
+}
+
+/* Additional Hero Content Adjustments */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
 }
 
 .hero-overlay {
@@ -20,12 +37,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity for readability */
     z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
 }
 
 .hero-name {
@@ -62,7 +73,6 @@
     color: #fff;
 }
 
-
 /* Profile Photo Styling */
 .profile-photo {
     position: absolute;
@@ -79,115 +89,111 @@
     border-radius: 50%;
 }
 
-
-/* Contact Form Panel Styling */
-.contact-form-panel {
-    position: absolute;
-    top: 20%;
-    right: 30px;
-    width: 300px;
-    background-color: white;
-    border-left: 3px solid #007bff;
-    padding: 20px;
-    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1050;
-}
-
-.contact-form-panel h5 {
-    font-size: 1.5rem;
-    color: #007bff;
-}
-
-.contact-form-panel .form-control {
-    font-size: 1rem;
-    border-radius: 5px;
-}
-
-/* Section Wrapper - General Styling */
+/* General Section Wrapper Styling */
 .section-wrapper {
-    padding: 100px 0; /* Increased padding for more height */
-    background-color: #f8f9fa;
+    padding: 40px 0; /* Adjusted padding for even spacing */
+    background-color: #fff; /* White background for clean look */
+    max-width: 1200px;
+    margin: 0 auto; /* Center content */
 }
 
-/* Buying and Selling Section Titles */
+/* Section Title Enhancements */
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
     text-align: center;
     background-color: #000;
     color: #fff;
-    padding: 30px; /* Increased padding for a bolder title area */
-    margin: 0;
+    padding: 15px 40px; /* Adjusted padding for balanced look */
+    display: inline-block; /* Center title */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 40px; /* Space below title */
     position: relative;
 }
 
-/* Downward Arrow Below Title */
+/* Downward Arrow Styling */
 .section-title::after {
     content: '';
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 12px; /* Adjusted for visibility */
+    border-width: 10px;
     border-style: solid;
     border-color: #000 transparent transparent transparent;
 }
 
-/* Section Content Styling */
+/* Content Layout Using Flexbox */
 .section-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 60px; /* Increased padding inside the content for more space */
+    justify-content: space-around; /* Space evenly */
+    gap: 20px; /* Reduced gap for cleaner layout */
+    padding: 0 20px; /* Side padding for content */
 }
 
-.section-content h3 {
-    font-size: 1.8rem;
+.section-text {
+    flex: 1;
+    text-align: left; /* Align text to the left */
+    max-width: 500px; /* Limit text width for readability */
+}
+
+.section-text h3 {
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced space below heading */
 }
 
-.section-content p {
+.section-text p {
     font-size: 1rem;
-    color: #333;
+    color: #555; /* Softer text color */
     line-height: 1.6;
+    margin-bottom: 20px; /* Space below paragraph */
 }
 
 /* Button Styling */
-.start-button {
-    background-color: #007bff;
+.section-button {
+    background-color: #4a90e2; /* Light blue color */
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
-    padding: 12px 30px;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.start-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Image Styling */
-.section-image {
-    width: 50%;
-    max-width: 500px;
+    padding: 10px 20px; /* Adjusted button padding */
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between text and icon */
+    transition: background-color 0.3s;
+}
+
+.section-button:hover {
+    background-color: #357ab8; /* Darker blue on hover */
+}
+
+/* Image Adjustments */
+.section-image {
+    flex: 1;
+    max-width: 450px; /* Limit image width */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     .section-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically */
         text-align: center;
-        padding: 40px;
+    }
+
+    .section-text {
+        text-align: center; /* Center text for smaller screens */
+        max-width: 100%; /* Full width for text */
     }
 
     .section-image {
-        width: 80%;
-        margin-top: 20px;
+        max-width: 80%; /* Reduce image width */
+        margin-top: 20px; /* Space above image */
     }
 }
 
@@ -199,27 +205,32 @@
     position: relative;
 }
 
+/* Testimonials Section Title Styling */
 .testimonials-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
-    color: #000;
-    margin-bottom: 30px;
-    position: relative;
-    padding: 20px;
+    text-align: center;
     background-color: #000;
     color: #fff;
+    padding: 10px 30px; /* Adjusted padding to match the style */
+    margin: 30px auto; /* Center the title and add space above */
+    position: relative;
+    display: inline-block; /* Make the title fit the content */
 }
 
+/* Downward Arrow Below Testimonials Title */
 .testimonials-title::after {
     content: '';
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 10px;
+    border-width: 10px; /* Arrow size */
     border-style: solid;
     border-color: #000 transparent transparent transparent;
 }
+
+
 
 .testimonials-carousel {
     display: flex;
@@ -227,7 +238,7 @@
     align-items: stretch;
     max-width: 1200px;
     margin: 0 auto;
-    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
+    transition: opacity 0.3s ease-in-out;
 }
 
 .testimonial-card {
@@ -323,56 +334,57 @@
     color: #fff;
     text-align: center;
     position: relative;
-  }
-  
-  .contact-content {
+    margin-bottom: 2rem;
+}
+
+.contact-content {
     position: relative;
     z-index: 2;
-  }
-  
-  .contact-user-icon {
-    font-size: 5rem; /* Size of user icon */
+}
+
+.contact-user-icon {
+    font-size: 5rem;
     margin-bottom: 20px;
     color: #fff;
-  }
-  
-  .contact-phone {
-    font-size: 3.5rem; /* Increased font size */
+}
+
+.contact-phone {
+    font-size: 3.5rem;
     font-weight: bold;
     margin: 10px 0;
-  }
-  
-  .contact-name {
-    font-size: 2rem; /* Increased font size */
+}
+
+.contact-name {
+    font-size: 2rem;
     font-weight: bold;
     margin-top: 10px;
-  }
-  
-  .contact-details {
-    font-size: 1.2rem; /* Increased font size */
+}
+
+.contact-details {
+    font-size: 1.2rem;
     margin-bottom: 30px;
-  }
-  
-  .social-icons {
+}
+
+.social-icons {
     margin: 20px 0;
-  }
-  
-  .social-icons > * {
-    font-size: 1.8rem; /* Size for social media icons */
+}
+
+.social-icons > * {
+    font-size: 1.8rem;
     margin: 0 15px;
     color: #fff;
     cursor: pointer;
     transition: color 0.3s;
-  }
-  
-  .social-icons > *:hover {
-    color: #ccc; /* Hover color for social icons */
-  }
-  
-  .contact-button {
-    background-color: #000 !important; /* Black background */
-    color: #fff !important; /* White text */
-    font-weight: bold !important; /* Bold text */
+}
+
+.social-icons > *:hover {
+    color: #ccc;
+}
+
+.contact-button {
+    background-color: #000 !important;
+    color: #fff !important;
+    font-weight: bold !important;
     font-size: 1rem !important;
     padding: 10px 20px !important;
     border: none !important;
@@ -383,24 +395,19 @@
 }
 
 .contact-button:hover {
-    transform: scale(1.05) !important; /* Slight zoom on hover */
+    transform: scale(1.05) !important;
 }
 
-
-  
-  .contact-section::before {
+.contact-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Overlay for readability */
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
-  }
-  
-  
-
+}
 
 @media (max-width: 768px) {
     .section-wrapper {
@@ -413,5 +420,3 @@
         padding: 30px;
     }
 }
-
-
