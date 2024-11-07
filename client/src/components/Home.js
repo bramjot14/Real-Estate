@@ -123,7 +123,7 @@ const HomePage = () => {
       </Container>
 
       {/* Contact Us Form on the Right Side */}
-      <div className="contact-form-panel">
+      {/* <div className="contact-form-panel">
         <h5>Contact Us</h5>
         <Form>
           <Form.Group controlId="formName">
@@ -142,7 +142,7 @@ const HomePage = () => {
             Submit
           </Button>
         </Form>
-      </div>
+      </div> */}
       {/* Contact Section */}
       <div className="contact-section">
         <Container className="contact-content">
