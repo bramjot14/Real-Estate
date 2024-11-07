@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import NavigationBar from './components/Navbar';
@@ -19,8 +21,6 @@ import AdminDashboard from './components/AdminDashboard';
 import BlogDetails from './components/BlogDetails';
 import BuyingPage from './components/BuyingPage';
 import SellingPage from './components/SellingPage';
-// import 'bootstrap/dist/css/bootstrap.min.css'; 
-import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);  // State for user
