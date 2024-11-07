@@ -3,6 +3,8 @@ const passport = require('passport');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
+const TwitterStrategy = require('passport-twitter').Strategy;
 const cors = require('cors');
 const path = require('path');
 const multer = require('multer');
@@ -78,6 +80,37 @@ passport.use(
   )
 );
 
+// Facebook OAuth Strategy
+passport.use(new FacebookStrategy({
+  clientID: process.env.FACEBOOK_APP_ID,
+  clientSecret: process.env.FACEBOOK_APP_SECRET,
+  callbackURL: process.env.FACEBOOK_REDIRECT_URI
+},
+function (accessToken, refreshToken, profile, done) {
+  const user = {
+    displayName: profile.displayName,
+    emails: profile.emails || [],  // Some providers may not provide emails
+    role: 'regular'
+  };
+  return done(null, user);
+}
+));
+
+passport.use(new TwitterStrategy({
+  consumerKey: process.env.TWITTER_API_KEY,
+  consumerSecret: process.env.TWITTER_API_SECRET_KEY,
+  callbackURL: process.env.TWITTER_REDIRECT_URI
+},
+function (token, tokenSecret, profile, done) {
+  const user = {
+    displayName: profile.displayName,
+    username: profile.username,
+    role: 'regular'
+  };
+  return done(null, user);
+}));
+
+
 // Serialize and Deserialize user
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -100,6 +133,14 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 // Google OAuth callback route
 app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
   res.redirect('https://real-estate-frontend-npqr.onrender.com'); // ('https://real-estate-frontend-npqr.onrender.com/profile')
+});
+
+// Facebook OAuth login route
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email'] }));
+
+// Facebook OAuth callback route
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), (req, res) => {
+  res.redirect('https://real-estate-frontend-npqr.onrender.com'); //'http://localhost:3000/profile
 });
 
 // Profile route
