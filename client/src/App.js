@@ -19,6 +19,7 @@ import AdminDashboard from './components/AdminDashboard';
 import BlogDetails from './components/BlogDetails';
 import BuyingPage from './components/BuyingPage';
 import SellingPage from './components/SellingPage';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Added
 import './App.css';
 
 function App() {
