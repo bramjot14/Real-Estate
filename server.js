@@ -143,6 +143,16 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRe
   res.redirect('https://real-estate-frontend-npqr.onrender.com'); //'http://localhost:3000/profile
 });
 
+// Twitter OAuth login route
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email'] }));
+
+// Twitter OAuth callback route
+app.get('/auth/Twitter/callback', passport.authenticate('twitter', { failureRedirect: '/' }), (req, res) => {
+  res.redirect('https://real-estate-frontend-npqr.onrender.com'); //'http://localhost:3000/profile
+});
+
+app.get('/auth/Twitter', passport.authenticate('twitter', { scope: ['email'] }));
+
 // Profile route
 app.get('/profile', (req, res) => {
   if (!req.isAuthenticated()) {
