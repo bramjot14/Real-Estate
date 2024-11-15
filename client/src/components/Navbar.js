@@ -54,7 +54,6 @@ const NavigationBar = ({ user, setUser }) => {
             ) : (
               <>
                 <Button className="nav-link-custom" onClick={handleLoginClick}>Login</Button> 
-                // <Nav.Link href="https://real-estate-pyvy.onrender.com/auth/google" className="nav-link-custom">Login with Google</Nav.Link>
                 <Nav.Link as={Link} to="/signup" className="nav-link-custom">Sign Up</Nav.Link>
               </>
             )}
