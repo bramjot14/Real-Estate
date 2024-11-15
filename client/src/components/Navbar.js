@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebook, faApple, faTwitter, faEnvelope } from '@fortawesome/free-brands-svg-icons';
 
 const NavigationBar = ({ user, setUser }) => {
-      const [showModal, setShowModal] = useState(false);
+      const [showModal, setShowModal] = useState(false); 
 
     const handleLoginClick = () => { 
         setShowModal(true);
