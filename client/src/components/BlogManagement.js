@@ -1,7 +1,7 @@
 // src/components/BlogManagement.js
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'axios'; 
 
 const BlogManagement = () => {
   const [blogs, setBlogs] = useState([]);
