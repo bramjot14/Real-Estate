@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const BlogManagement = () => {
   const [blogs, setBlogs] = useState([]);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState(''); 
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
