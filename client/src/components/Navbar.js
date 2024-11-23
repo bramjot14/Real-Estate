@@ -7,6 +7,7 @@ import { faGoogle, faFacebook, faApple, faTwitter, faEnvelope } from '@fortaweso
 
 const NavigationBar = ({ user, setUser }) => {
       const [showModal, setShowModal] = useState(false); 
+        const [expanded, setExpanded] = useState(false); // Add state for Navbar expansion
 
     const handleLoginClick = () => { 
         setShowModal(true);
@@ -15,46 +16,51 @@ const NavigationBar = ({ user, setUser }) => {
     const handleClose = () => {
         setShowModal(false);
     };
+
+    const handleNavClick = () => {
+        setExpanded(false); // Close the navbar when a link is clicked
+    };
   return (
-    <Navbar bg="dark" expand="lg" collapseOnSelect className="custom-navbar">
+    <Navbar bg="dark" expand="lg" collapseOnSelect className="custom-navbar" expanded={expanded} // Control the Navbar expansion>
       <Container>
         <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">
           Singh's Realty
         </Navbar.Brand>
 
         {/* Toggle button for mobile view */}
-        <Navbar.Toggle aria-controls="navbar-nav" />
-
+       <Navbar.Toggle
+                    aria-controls="navbar-nav"
+                    onClick={() => setExpanded(expanded ? false : true)} // Toggle navbar expansion
+                />
         <Navbar.Collapse id="navbar-nav">
           {/* Centered main links */}
           <Nav className="mx-auto custom-nav-links">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/mortgage-calculator">Mortgage Calculator</Nav.Link>
-            <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
-            <Nav.Link as={Link} to="/schedule">Schedule Appointment</Nav.Link>
-            <Nav.Link as={Link} to="/about">About Us/Our Team</Nav.Link>
-            <Nav.Link as={Link} to="/property-listings">Property Listings</Nav.Link>
-            <Nav.Link as={Link} to="/admin/dashboard" className="nav-link-custom">Admin Dashboard</Nav.Link>
+            <Nav.Link as={Link} to="/" onClick={handleNavClick}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/mortgage-calculator" onClick={handleNavClick}>Mortgage Calculator</Nav.Link>
+            <Nav.Link as={Link} to="/blogs" onClick={handleNavClick}>Blogs</Nav.Link>
+            <Nav.Link as={Link} to="/schedule" onClick={handleNavClick}>Schedule Appointment</Nav.Link>
+            <Nav.Link as={Link} to="/about" onClick={handleNavClick}>About Us/Our Team</Nav.Link>
+            <Nav.Link as={Link} to="/property-listings" onClick={handleNavClick}>Property Listings</Nav.Link>
+            <Nav.Link as={Link} to="/admin/dashboard" className="nav-link-custom" onClick={handleNavClick}>Admin Dashboard</Nav.Link>
           </Nav>
 
           {/* Right-aligned user-related links */}
           <Nav className="ml-auto custom-nav-auth">
             {user ? (
               <>
-                <Nav.Link as={Link} to="/profile" className="nav-link-custom">Profile</Nav.Link>
+                <Nav.Link as={Link} to="/profile" className="nav-link-custom" onClick={handleNavClick}>Profile</Nav.Link>
                 {user.role === 'admin' && 
                   (
                   <>
                     {/* <Nav.Link as={Link} to="/admin/reviews" className="nav-link-custom">Manage Reviews</Nav.Link> */}
-                    <Nav.Link as={Link} to="/admin/dashboard" className="nav-link-custom">Admin Dashboard</Nav.Link>
+                    <Nav.Link as={Link} to="/admin/dashboard" className="nav-link-custom" onClick={handleNavClick}>Admin Dashboard</Nav.Link>
                   </>
                 )}
-                <Nav.Link href="https://real-estate-pyvy.onrender.com/logout" className="nav-link-custom">Logout</Nav.Link>
+                <Nav.Link href="https://real-estate-pyvy.onrender.com/logout" className="nav-link-custom" >Logout</Nav.Link>
               </>
             ) : (
               <>
                 <Button className="nav-link-custom" onClick={handleLoginClick}>Login</Button> 
-                <Nav.Link as={Link} to="/signup" className="nav-link-custom">Sign Up</Nav.Link>
               </>
             )}
           </Nav>
