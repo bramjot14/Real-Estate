@@ -39,7 +39,7 @@ const NavigationBar = ({ user, setUser }) => {
                     aria-controls="navbar-nav"
                     onClick={() => setExpanded(expanded ? false : true)} // Toggle navbar expansion
                 />
-                <Navbar.Collapse id="navbar-nav">
+               <Navbar.Collapse className={expanded ? "show" : ""} id="navbar-nav">
                     <Nav className="mx-auto custom-nav-links">
                         <Nav.Link as={Link} to="/" onClick={handleNavClick}>Home</Nav.Link>
                         <Nav.Link as={Link} to="/mortgage-calculator" onClick={handleNavClick}>Mortgage Calculator</Nav.Link>
