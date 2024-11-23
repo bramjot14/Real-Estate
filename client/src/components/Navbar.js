@@ -58,14 +58,23 @@ const NavigationBar = ({ user, setUser }) => {
                         {user ? (
                             <>
                                 <Nav.Link as={Link} to="/profile" onClick={handleNavClick}>Profile</Nav.Link>
-                                <Nav.Link href="https://real-estate-pyvy.onrender.com/logout">
+                         {user.role === 'admin' && (
+                              <Nav.Link href="/admin/dashboard" className="nav-link-custom" onClick={handleNavClick}>Admin Dashboard</Nav.Link>
+                                )}
+                                <Nav.Link href="https://real-estate-pyvy.onrender.com/logout" onClick={handleNavClick} >
                                     Logout
                                 </Nav.Link>
                             </>
                         ) : (
-                            <Button className="nav-link-custom" onClick={handleLoginClick}>
-                                Login
-                            </Button>
+<Button
+    className="nav-link-custom"
+    onClick={() => {
+        handleLoginClick();
+        handleNavClick();
+    }}
+>
+    Login
+</Button>
                         )}
                     </Nav>
                 </Navbar.Collapse>
